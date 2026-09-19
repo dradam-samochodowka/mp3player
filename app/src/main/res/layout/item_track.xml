@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="58dp"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <ImageView
+        android:id="@+id/trackIndicator"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="@string/cd_now_playing"
+        android:src="@drawable/ic_music"
+        android:tint="@color/accent"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/trackNumber"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="8dp"
+        android:text="1"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/trackTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/trackSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

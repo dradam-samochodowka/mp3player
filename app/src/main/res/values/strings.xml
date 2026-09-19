@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Odtwarzacz MP3</string>
+
+    <string name="nothing_playing">Brak odtwarzanego utworu</string>
+    <string name="unknown_track">Nieznany utwor</string>
+
+    <string name="status_no_folder">Nie wybrano katalogu — dotknij ikony folderu</string>
+    <string name="status_empty_folder">W wybranym katalogu nie znaleziono plikow audio</string>
+    <string name="status_scanning">Skanowanie katalogu…</string>
+    <string name="status_tracks">Utworow: %1$d</string>
+
+    <string name="toast_shuffle_on">Odtwarzanie losowe: WLACZONE (nowa permutacja)</string>
+    <string name="toast_shuffle_off">Odtwarzanie losowe: WYLACZONE</string>
+
+    <string name="err_no_permission">Nie udalo sie uzyskac trwalego dostepu do katalogu</string>
+    <string name="err_service">Nie udalo sie polaczyc z usluga odtwarzania</string>
+
+    <string name="cd_play">Odtworz</string>
+    <string name="cd_pause">Pauza</string>
+    <string name="cd_next">Nastepny</string>
+    <string name="cd_prev">Poprzedni</string>
+    <string name="cd_shuffle">Odtwarzanie losowe</string>
+    <string name="cd_repeat">Zapetlanie</string>
+    <string name="cd_folder">Wybierz katalog zrodlowy</string>
+    <string name="cd_now_playing">Odtwarzany utwor</string>
+</resources>
