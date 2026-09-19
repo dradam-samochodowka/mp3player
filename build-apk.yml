@@ -1,0 +1,47 @@
+# Automatyczne budowanie pliku APK w chmurze (GitHub Actions).
+#
+# Uruchamia sie po kazdym wgraniu zmian do repozytorium oraz recznie
+# (zakladka "Actions" -> "Budowanie APK" -> przycisk "Run workflow").
+#
+# Gotowy plik APK pojawia sie na dole strony danego uruchomienia,
+# w sekcji "Artifacts", jako archiwum ZIP do pobrania.
+
+name: Budowanie APK
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:      # uruchomienie reczne z przegladarki
+
+jobs:
+  build:
+    name: Kompilacja debug APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobranie kodu zrodlowego
+        uses: actions/checkout@v4
+
+      - name: Instalacja JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Konfiguracja Gradle (z pamiecia podreczna)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Nadanie praw wykonywania skryptowi gradlew
+        run: chmod +x ./gradlew
+
+      - name: Budowanie APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Publikacja pliku APK jako artefaktu
+        uses: actions/upload-artifact@v4
+        with:
+          name: odtwarzacz-mp3-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 30
